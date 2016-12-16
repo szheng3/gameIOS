@@ -61,7 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     run(SKAction.repeatForever(
       SKAction.sequence([
         SKAction.run(addMonster),
-        SKAction.wait(forDuration: 1.0)
+        SKAction.wait(forDuration: 4.0)
       ])
     ))
     
@@ -102,7 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     addChild(monster)
    
     // Determine speed of the monster
-    let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+    let actualDuration = random(min: CGFloat(10), max: CGFloat(20))
    
     // Create the actions
     let actionMove = SKAction.move(to: CGPoint(x: -monster.size.width/2, y: actualY), duration: TimeInterval(actualDuration))
